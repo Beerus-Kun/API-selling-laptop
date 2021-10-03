@@ -409,7 +409,7 @@ router.post('/bought', Auth.authenUser, async(req, res, next)=>{
             let update_inventory = await Inventory.updateSold(listProduct[i].id_product, listProduct[i].quantity);
             let price = await Product.selectCurrentPrice(listProduct[i].id_product);
             price = price * listProduct[i].quantity;
-            let addItem = await Bill.addItem(id_bill, listProduct[i].id_product, listProduct[i].quantity, price);
+            let addItem = await Bill.addItem(id_bill, listProduct[i].id_product, listProduct[i].quantity, price, listProduct[i].warranty);
         }
         
         let update = await Bill.updateTotal(id_bill);

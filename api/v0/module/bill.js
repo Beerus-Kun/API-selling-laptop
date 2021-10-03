@@ -23,11 +23,11 @@ db.addBill = (id_account, address)=>{
     })
 }
 
-db.addItem = (id_bill, id_product, quantity, price)=>{
+db.addItem = (id_bill, id_product, quantity, price, warranty)=>{
     return new Promise((resolve, reject)=>{
-        pool.query(`INSERT INTO bill_item (id_bill, id_product, quantity, price)
-        VALUES ($1, $2, $3, $4)`,
-        [id_bill, id_product, quantity, price],
+        pool.query(`INSERT INTO bill_item (id_bill, id_product, quantity, price, warranty)
+        VALUES ($1, $2, $3, $4, $5)`,
+        [id_bill, id_product, quantity, price, warranty],
         (err, result)=>{
             if(err) return reject(err);
             return resolve(result.rows)
@@ -122,7 +122,7 @@ db.selectStatusID = (id_bill)=>{
 
 db.selectItems = (id_bill)=>{
     return new Promise((resolve, reject)=>{
-        pool.query(`SELECT p.name, b.quantity, b.price, b.id_product
+        pool.query(`SELECT p.name, b.quantity, b.price, b.id_product, b.warranty
                     FROM bill_item b, product p
                     WHERE b.id_product = p.id_product AND 
                     b.id_bill = $1`,

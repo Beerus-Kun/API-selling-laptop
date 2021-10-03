@@ -105,7 +105,7 @@ db.deleteAccount = (id_account)=>{
 
 db.selectAccount = (id_account)=>{
     return new Promise((resolve, reject)=>{
-        pool.query(`SELECT c.id_cart, p.name, c.quantity, c.id_product, p.current_price
+        pool.query(`SELECT c.id_cart, p.name, c.quantity, c.id_product, p.current_price, p.warranty
                 FROM cart c, product p 
                 WHERE c.id_product = p.id_product AND
                 c.id_account = $1`,

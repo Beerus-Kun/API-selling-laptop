@@ -1,5 +1,5 @@
 ### thêm 1 sản phẩm vô giỏ hàng
-POST   http://localhost:8000/cart/product/10?quantity=3
+POST   http://localhost:8000/cart/product/8?quantity=3
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
 
 ### lấy tất cả sản phẩm trong giỏ hàng
@@ -11,5 +11,5 @@ PUT http://localhost:8000/cart/update/1/quantity?new_quantity=2
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
 
 ### xóa sản phẩm trong giỏ hàng
-DELETE  http://localhost:8000/cart/product/13
+DELETE  http://localhost:8000/cart/product/14
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8

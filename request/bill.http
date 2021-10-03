@@ -20,7 +20,7 @@ GET http://localhost:8000/bill/account/amount
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
 
 ### thông tin chi tiết của đơn hàng
-GET  http://localhost:8000/bill/information/5
+GET  http://localhost:8000/bill/information/6
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
 
 ### hủy đơn hàng
