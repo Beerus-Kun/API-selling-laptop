@@ -1,0 +1,68 @@
+### thên 1 sản phẩm
+POST http://localhost:8000/product/
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE3NTUyOCwiZXhwIjoxNjMzMjExNTI4fQ.Cik6puXDlBTaz8PJ5BzuNypyIISxwB88ggVZWbJ3C8s
+Content-Type: application/json
+
+{
+    "id_brand":"1",
+    "id_image":"1",
+    "name":"may cui nhat thoi dai",
+    "information":"chip 1 nano \n ram 2gb",
+    "released_year":"2021",
+    "warranty":"24",
+    "price":"20000000"
+}
+
+### lấy thông tin 1 sản phẩm
+GET  http://localhost:8000/product/information/1
+
+### xem tất cả sản phẩm
+GET  http://localhost:8000/product/all
+
+### tìm kiếm sản phẩm theo tên
+GET  http://localhost:8000/product/all?is_search_name=1&search=macbook
+
+### xem sản phẩm thuộc 1 hãng
+GET  http://localhost:8000/product/all?is_brand=1&id_brand=1&is_sorted_price=0
+
+### xem số lượng tất cả sản phẩm
+GET  http://localhost:8000/product/all/amount
+
+### xem số lượng sản phẩm theo hãng
+GET  http://localhost:8000/product/all/amount?is_brand=1&id_brand=1
+
+### xem số lượng sản phẩm theo tìm kiếm
+GET  http://localhost:8000/product/all/amount?is_search_name=1&search=macbook
+
+### thay đổi thông tin 1 sản phẩm
+PUT http://localhost:8000/product/update/1
+Authorization: Beaere eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+Content-Type: application/json
+
+{
+    "id_brand":"1",
+    "id_image":"1",
+    "name":"dell xps",
+    "information":"chip 1 nano, da thay doi",
+    "released_year":"2021",
+    "warranty":"24",
+    "price":"10000000"
+}
+
+### chỉnh sửa giá hiện tại
+PUT http://localhost:8000/product/update/price/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+Content-Type: application/json
+
+{
+    "new_price":"12000000"
+}
+
+### chỉnh sửa trạng thái cho sản phẩm
+PUT http://localhost:8000/product/update/status/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+Content-Type: application/json
+
+{
+    "new_status":"0"
+}

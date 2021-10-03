@@ -1,0 +1,26 @@
+### lấy thông tin phàn hổi 
+POST  http://localhost:8000/feedback/
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
+Content-Type: application/json
+
+{
+    "subject":"khen web",
+    "content":"ai làm web mà hay quá v"
+}
+
+### lấy thông tin phàn hổi 
+GET http://localhost:8000/feedback/information/3
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
+
+### Lấy tất cả phản hồi
+GET http://localhost:8000/feedback/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
+
+### Lấy số lượng phản hồi
+GET http://localhost:8000/feedback/all/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
+
+### Xóa phản hồi
+DELETE http://localhost:8000/feedback/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
+

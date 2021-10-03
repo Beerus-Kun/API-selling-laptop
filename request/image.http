@@ -1,0 +1,25 @@
+### thêm 1 hình
+POST http://localhost:8000/image
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE0NDU0MSwiZXhwIjoxNjMzMTgwNTQxfQ.ZhFwyvcorNeWHy4lOhZf9ajFgVxTJl7Y2mtzbJ-BAwE
+# file theo body
+
+### lấy tất cả hình
+GET http://localhost:8000/image/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE0NDU0MSwiZXhwIjoxNjMzMTgwNTQxfQ.ZhFwyvcorNeWHy4lOhZf9ajFgVxTJl7Y2mtzbJ-BAwE
+
+### lấy số lượng hình
+GET http://localhost:8000/image/all/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE0NDU0MSwiZXhwIjoxNjMzMTgwNTQxfQ.ZhFwyvcorNeWHy4lOhZf9ajFgVxTJl7Y2mtzbJ-BAwE
+
+### lấy 1 hình
+GET http://localhost:8000/image/information/2
+
+### đổi hình theo id
+PUT http://localhost:8000/image/change/3
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE0NDU0MSwiZXhwIjoxNjMzMTgwNTQxfQ.ZhFwyvcorNeWHy4lOhZf9ajFgVxTJl7Y2mtzbJ-BAwE
+#(thiếu file)
+
+### xóa 1 hình
+DELETE http://localhost:8000/image/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE0NDU0MSwiZXhwIjoxNjMzMTgwNTQxfQ.ZhFwyvcorNeWHy4lOhZf9ajFgVxTJl7Y2mtzbJ-BAwE
+

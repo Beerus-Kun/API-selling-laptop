@@ -1,0 +1,45 @@
+### kiểm tra đơn hàng trước khi mua
+GET  http://localhost:8000/bill/checked
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### mua hàng
+POST http://localhost:8000/bill/bought
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+Content-Type: application/json
+
+{
+    "address":"200 Man Thiện"
+}
+
+### danh sách hóa đơn của tài khoản
+GET  http://localhost:8000/bill/account
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### số lượng đơn hàng của tài khoản
+GET http://localhost:8000/bill/account/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### thông tin chi tiết của đơn hàng
+GET  http://localhost:8000/bill/information/5
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### hủy đơn hàng
+PUT  http://localhost:8000/bill/cancel/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### danh sách hóa đơn trong ngày (admin)
+GET  http://localhost:8000/bill/day
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### số lượng hóa đơn trong ngày (admin)
+GET  http://localhost:8000/bill/day/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### doanh thu trong ngày (admin)
+GET  http://localhost:8000/bill/day/total
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+
+### danh sách hóa đơn trong tháng (admin)
+GET  http://localhost:8000/bill/month
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzI1MzAwOCwiZXhwIjoxNjMzMjg5MDA4fQ.QvbHJMMu1KaumcrBN3e34-Qw9lMLtTfDMgH5S-Qe5B8
+

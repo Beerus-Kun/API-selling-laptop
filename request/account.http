@@ -1,0 +1,168 @@
+### tạo tài khoản admin khởi tạo
+POST http://localhost:8000/account/create/admin/init
+Content-Type: application/json
+
+{
+    "email": "admin1",
+    "name": "beerus",
+    "password": "123456",
+    "sex": "1",
+    "phone": "0123456789",
+    "address": "97 Man Thiện"
+}
+
+### tạo tài khoản thường
+POST http://localhost:8000/account/signup
+Content-Type: application/json
+
+{
+    "email": "sieuquaytihon80@gmail.com",
+    "name": "beerus",
+    "password": "123456",
+    "sex": "1",
+    "phone": "0123456789",
+    "address": "97 Man Thiện"
+}
+
+### Tạo tài khoản stocker
+POST http://localhost:8000/account/create/stocker
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTY5MiwiZXhwIjoxNjMyODQzMjkyfQ.L1hjx8rzAhm-8Gyi1UwWINpPZjtcjjiR-Ev8v8XwqjU
+Content-Type: application/json
+
+{
+    "email": "stocker1",
+    "name": "beerus",
+    "password": "123456",
+    "sex": "1",
+    "phone": "0123456789",
+    "address": "97 Man Thiện"
+}
+
+### Tạo tài khoản admin
+POST http://localhost:8000/account/create/admin
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoyMSwicG9zaXRpb24iOjAsImVtYWlsIjoiYWNjb3VudDIiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTI2NiwiZXhwIjoxNjMyODQyODY2fQ.J_Hk2LXD-dbZvUwMldqnoz8710XuhZg4W3zDSEqyw34
+Content-Type: application/json
+
+{
+    "email": "sieuquaytihon80",
+    "name": "beerus",
+    "password": "123456",
+    "sex": "1",
+    "phone": "0123456789",
+    "address": "97 Man Thiện"
+}
+
+### Đăng nhập
+POST http://localhost:8000/account/login
+Content-Type: application/json
+
+{
+    "email": "admin1",
+    "password": "123456"
+}
+
+### đăng nhập quản lý
+POST http://localhost:8000/account/login/personel
+Content-Type: application/json
+
+{
+    "email": "stocker1",
+    "password": "123456"
+}
+
+### Quên mật khẩu
+POST http://localhost:8000/account/forgot-password
+Content-Type: application/json
+
+{
+    "email": "sieuquaytihon80@gmail.com"
+}
+
+
+### Xác nhận mã
+POST http://localhost:8000/account/confirm
+Content-Type: application/json
+
+{
+    "code": "853456",
+    "id_account": "8"
+}
+
+### Lấy thông tin tài khoản của mình
+GET http://localhost:8000/account/information
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo4LCJwb3NpdGlvbiI6MCwiZW1haWwiOiJzaWV1cXVheXRpaG9uODBAZ21haWwuY29tIiwic3RhdHVzIjoxLCJpYXQiOjE2MzI4Mzk3NzMsImV4cCI6MTYzMjg0MzM3M30.LEBlpf2FDz7Kxdq9ioDtzmDSH3afVcU6BKKLnNsqlp0
+
+### Danh sách tài khoản
+GET http://localhost:8000/account/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzA1ODg3MiwiZXhwIjoxNjMzMDYyNDcyfQ.jLV7z2oTNTXcyQcZUL3jiKHSbRMSTUYCK5SECHDiMm0
+
+### số lượng tài khoản trong danh sách
+GET http://localhost:8000/account/all/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzA1ODg3MiwiZXhwIjoxNjMzMDYyNDcyfQ.jLV7z2oTNTXcyQcZUL3jiKHSbRMSTUYCK5SECHDiMm0
+
+### Danh sách tài khoản bị khóa
+GET http://localhost:8000/account/lock
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTgxOSwiZXhwIjoxNjMyODQzNDE5fQ.0qqDNgfVUwJmDFPUNTn6EW9JDr0wZNpw2sHfdlGCis0
+
+### Số lượng tài khoản bị khóa
+GET http://localhost:8000/account/lock/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTgxOSwiZXhwIjoxNjMyODQzNDE5fQ.0qqDNgfVUwJmDFPUNTn6EW9JDr0wZNpw2sHfdlGCis0
+
+### Tìm kiếm tài khoản theo email
+GET http://localhost:8000/account/search
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTgxOSwiZXhwIjoxNjMyODQzNDE5fQ.0qqDNgfVUwJmDFPUNTn6EW9JDr0wZNpw2sHfdlGCis0
+Content-Type: application/json
+
+{
+    "search": "test",
+    "page": "1"
+}
+
+### Số lượng kết quả tìm theo email
+GET http://localhost:8000/account/search/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjgzOTgxOSwiZXhwIjoxNjMyODQzNDE5fQ.0qqDNgfVUwJmDFPUNTn6EW9JDr0wZNpw2sHfdlGCis0
+Content-Type: application/json
+
+{
+    "search": "p"
+}
+
+### Đổi password
+PUT http://localhost:8000/account/change_password
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjg0MTM5NCwiZXhwIjoxNjMyODQ0OTk0fQ.6SHyRJdjI-v2eAI0tHkm7O-VKz0ShXvRsfSVu0Ajo0k
+Content-Type: application/json
+
+{
+    "new_password": "123456",
+    "id_account": 2
+}
+
+### khóa tài khoản
+PUT http://localhost:8000/account/lock
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjg0MTM5NCwiZXhwIjoxNjMyODQ0OTk0fQ.6SHyRJdjI-v2eAI0tHkm7O-VKz0ShXvRsfSVu0Ajo0k
+Content-Type: application/json
+
+{
+    "id_account": "2"
+}
+
+### mở tài khoản bị khóa
+PUT http://localhost:8000/account/unlock
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjg0MTM5NCwiZXhwIjoxNjMyODQ0OTk0fQ.6SHyRJdjI-v2eAI0tHkm7O-VKz0ShXvRsfSVu0Ajo0k
+Content-Type: application/json
+
+{
+    "id_account": "2"
+}
+
+### cập nhật tài khoản
+PUT http://localhost:8000/account/update/information
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMjg0MTM5NCwiZXhwIjoxNjMyODQ0OTk0fQ.6SHyRJdjI-v2eAI0tHkm7O-VKz0ShXvRsfSVu0Ajo0k
+Content-Type: application/json
+
+{
+    "name": "beerus",
+    "sex": "0",
+    "phone": "0123456789",
+    "address": "97 Man Thiện"
+}

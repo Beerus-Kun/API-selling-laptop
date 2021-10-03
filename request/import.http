@@ -1,0 +1,47 @@
+### Thêm hàng nhập
+POST   http://localhost:8000/import
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo3LCJwb3NpdGlvbiI6MSwiZW1haWwiOiJzdG9ja2VyMSIsInN0YXR1cyI6MSwiaWF0IjoxNjMzMjU0Nzg2LCJleHAiOjE2MzMyOTA3ODZ9.uDYYNBQjAOUAQsw5-FkYl_cEyWBTziarkVawBI75L84
+Content-Type: application/json
+
+{
+    "id_product":"3",
+    "quantity":"30"
+}
+
+### lấy tất cả thông tin nhập hàng
+GET  http://localhost:8000/import/all
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy thông tin nhập hàng trong ngày
+GET  http://localhost:8000/import/all?is_date=1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy thông tin nhập hàng theo sản phẩm
+GET  http://localhost:8000/import/all?is_product=1&id_product=1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy số lượng thông tin nhập hàng
+GET  http://localhost:8000/import/all/amount
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy số lượng nhập hàng trong ngày
+GET  http://localhost:8000/import/all/amount?isdate=1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy số lượng nhập hàng theo sản phẩm
+GET  http://localhost:8000/import/all/amount?is_product=1&id_product=1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### lấy 1 thông tin nhập hàng
+GET  http://localhost:8000/import/information/1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE4MTM5NywiZXhwIjoxNjMzMjE3Mzk3fQ.typXxOFBgZNi7S-tpiNthEf36oo15EGNJLXO3yt155w
+
+### thay đổi số lượng nhập hàng (stock) 
+PUT http://localhost:8000/import/change/5
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo3LCJwb3NpdGlvbiI6MSwiZW1haWwiOiJzdG9ja2VyMSIsInN0YXR1cyI6MSwiaWF0IjoxNjMzMTg2NDEzLCJleHAiOjE2MzMyMjI0MTN9.ZIrazQQousZvepBy5VA5ua2-0BIbeTaZ55Ddm1XqOU0
+Content-Type: application/json
+
+{
+    "new_quantity":"60"
+}
+
