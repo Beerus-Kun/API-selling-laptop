@@ -52,7 +52,7 @@ router.get('/information/:id_image', async(req, res, next) => {
  * Xóa hình theo id_image
  * @permisson   admin
  * @params      id_image
- * @returns     205, 406
+ * @returns     205, 406, 422
  */
 router.delete('/:id_image', Auth.authenAdmin, async(req, res, next)=>{
     try{

@@ -121,6 +121,7 @@ router.post('/product/:id_product', Auth.authenUser, async(req, res, next)=>{
 /**
  * Xóa sản phẩm trong giỏ hàng
  * @params        id_cart
+ * @returns     200, 400, 416
  */
 router.delete('/product/:id_cart', Auth.authenUser, async(req, res, next)=>{
     try{

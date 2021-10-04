@@ -9,15 +9,11 @@ const Inventory = require('../module/inventory');
 /**
  * Lấy 1 sản phẩm
  * @params        id_product
+ * @returns     202, 411
  */
 router.get('/information/:id_product', async(req, res, next)=>{
     try{
         let id_product = req.params.id_product;
-        if(!id_product){
-            return res.json({
-                code: 400
-            })
-        }
 
         let exist = await Product.has(id_product);
         if(exist){
@@ -45,6 +41,7 @@ router.get('/information/:id_product', async(req, res, next)=>{
  *              lowest_price, highest_price
  *              is_brand, id_brand,
  *              is_search_name, search,
+ * @returns     202, 423
  */
 router.get('/all', async(req, res, next)=>{
     try{
@@ -123,16 +120,16 @@ router.get('/all', async(req, res, next)=>{
 
 /**
  * Lấy số lượng sản phẩm hiện có
- * @query       is_sorted_price, sorted_price (0-giam, 1-tang),
+ * @query       is_sorted_price,
  *              lowest_price, highest_price
  *              is_brand, id_brand,
  *              is_search_name, search,
+ * @returns     208, 423
  */
 router.get('/all/amount', async(req, res, next)=>{
     try{
         let amount;
         let is_sorted_price = req.query.is_sorted_price;
-        let sorted_price = req.query.sorted_price;
         let lowest_price = req.query.lowest_price;
         let highest_price = req.query.highest_price;
         let is_brand = req.query.is_brand;
@@ -235,6 +232,7 @@ router.post('/', Auth.authenPersonel, async(req, res, next)=>{
 
 /**
  * chỉnh sửa giá mới cho sản phẩm
+ * @permission  admin
  * @body        new_price
  * @params      id_product
  * @returns     200, 400, 411
@@ -273,6 +271,7 @@ router.put('/update/price/:id_product', Auth.authenAdmin, async(req, res, next)=
  * @body        id_brand, id_image, name,
  *              information, released_year, 
  *              warranty, price, note
+ * @returns     200, 400, 406, 410, 411
  */
  router.put('/update/:id_product', Auth.authenPersonel, async(req, res, next)=>{
     try{
@@ -339,7 +338,7 @@ router.put('/update/status/:id_product', Auth.authenPersonel, async(req, res, ne
         let id_product = req.params.id_product;
         let new_status = req.body.new_status;
 
-        if(id_product && new_status){
+        if(new_status){
             let exist = await Product.has(id_product);
             if(!exist){
                 return res.json({

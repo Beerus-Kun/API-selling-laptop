@@ -5,11 +5,10 @@ const router = express.Router();
 
 /**
  * Lấy tất cả hãng theo page
- * @permission  người làm việc
  * @query       search
  * @returns     202
  */
-router.get('/all', Auth.authenPersonel, async(req, res, next)=>{
+router.get('/all', async(req, res, next)=>{
     try{
         let search = req.query.search;
         let data = [];
@@ -34,6 +33,7 @@ router.get('/all', Auth.authenPersonel, async(req, res, next)=>{
  * Thêm hãng mới
  * @permisstion người trong kho
  * @body        name
+ * @returns     201, 400, 409
  */
 router.post('/', Auth.authenStocker, async(req, res, next)=>{
     try{
@@ -67,6 +67,7 @@ router.post('/', Auth.authenStocker, async(req, res, next)=>{
  * @permisstion người làm việc
  * @params      id_brand
  * @body        new_name
+ * @returns     200, 400, 409
  */
 router.put('/:id_brand', Auth.authenStocker, async(req, res, next)=>{
     try{

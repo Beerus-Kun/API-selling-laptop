@@ -55,16 +55,6 @@ CREATE TABLE product (
 	FOREIGN KEY (id_image) REFERENCES image(id_image)
 );
 
-INSERT INTO product (id_brand, name, price, id_image)
-VALUES
-(3, 'Aspire 7 Gaming A71541G R150', 20490000, 1),
-(4, 'Gaming G3 15 i7 10750H', 31490000, 1),
-(2, 'TUF Gaming FX506FH i5 10300H', 21490000, 1),
-(5, 'Ideapad Gaming 315IMH05 i7 10750H', 24990000, 1),
-(6, 'Gaming GF65 10UE i7 10750H', 31990000, 1),
-(3, 'Aspire 7 Gaming A71575G 52S5 i5 9300H', 20990000, 1),
-(1, 'MacBook Pro M1 2020', 37990000, 1);
-
 -- Tạo bảng tài khoản --
 
 CREATE TABLE account(
@@ -88,13 +78,6 @@ CREATE TABLE account(
 		-- 0: bi khoa
 		-- 1: binh thuong
 );
-
-INSERT INTO account (email, password, name)
-VALUES
-('test1@gmail.com', '123', 'beerus1'),
-('test2@gmail.com', '123', 'beerus2'),
-('test3@gmail.com', '123', 'beerus3'),
-('test4@gmail.com', '123', 'beerus4');
 
 -- Tạo bảng hóa đơn --
 

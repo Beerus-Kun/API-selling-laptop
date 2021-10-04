@@ -1,14 +1,14 @@
 ### lấy tất cả hãng
 GET http://localhost:8000/brand/all
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzA1ODg3MiwiZXhwIjoxNjMzMDYyNDcyfQ.jLV7z2oTNTXcyQcZUL3jiKHSbRMSTUYCK5SECHDiMm0
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxNSwicG9zaXRpb24iOjEsImVtYWlsIjoic3RvY2tlcjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzM1NjM4NywiZXhwIjoxNjMzMzkyMzg3fQ.PLWEl4EnCYxSE4OHzukd9HmwOfxnfwjxvCuxuCoXMRI
 
 ### thêm hãng mới
 POST  http://localhost:8000/brand
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo3LCJwb3NpdGlvbiI6MSwiZW1haWwiOiJzdG9ja2VyMSIsInN0YXR1cyI6MSwiaWF0IjoxNjMzMDYwMTgwLCJleHAiOjE2MzMwNjM3ODB9.OiUN0-7sbTLqy-1HishiACrsYh71Vl7b7KW7kfWfxKg
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxNSwicG9zaXRpb24iOjEsImVtYWlsIjoic3RvY2tlcjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzM1NjM4NywiZXhwIjoxNjMzMzkyMzg3fQ.PLWEl4EnCYxSE4OHzukd9HmwOfxnfwjxvCuxuCoXMRI
 Content-Type: application/json
 
 {
-    "name":"vivo"
+    "name":"HP"
 }
 
 ### đổi tên của hãng

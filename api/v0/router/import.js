@@ -146,7 +146,7 @@ router.get('/all/amount', Auth.authenPersonel, async(req, res, next)=>{
  * Lấy thông tin 1 import
  * @permission  người làm việc
  * @params      id_import
- * @returns     208, 413
+ * @returns     202, 413
  */
 router.get('/information/:id_import', Auth.authenPersonel, async(req, res, next)=>{
     try{
@@ -174,6 +174,7 @@ router.get('/information/:id_import', Auth.authenPersonel, async(req, res, next)
  * @permisstion stocker
  * @params      id_import
  * @body        new_quantity
+ * @returns     200, 400, 413, 414
  */
 router.put('/change/:id_import', Auth.authenStocker, async(req, res, next)=>{
     try{
@@ -217,7 +218,9 @@ router.put('/change/:id_import', Auth.authenStocker, async(req, res, next)=>{
 
 /**
  * Nhập hàng
+ * @permission  stocker
  * @body   id_product, quantity
+ * @returns     201, 400, 407, 411
  */
 router.post('/', Auth.authenStocker, async(req, res, next)=>{
     try{

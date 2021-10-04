@@ -1,23 +1,23 @@
 ### thên 1 sản phẩm
 POST http://localhost:8000/product/
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzE3NTUyOCwiZXhwIjoxNjMzMjExNTI4fQ.Cik6puXDlBTaz8PJ5BzuNypyIISxwB88ggVZWbJ3C8s
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxNSwicG9zaXRpb24iOjEsImVtYWlsIjoic3RvY2tlcjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzM1NjM4NywiZXhwIjoxNjMzMzkyMzg3fQ.PLWEl4EnCYxSE4OHzukd9HmwOfxnfwjxvCuxuCoXMRI
 Content-Type: application/json
 
 {
-    "id_brand":"1",
-    "id_image":"1",
-    "name":"may cui nhat thoi dai",
-    "information":"chip 1 nano \n ram 2gb",
+    "id_brand":"9",
+    "id_image":"30",
+    "name":"HP Gaming VICTUS 16 (8Gb-512Gb) (2021)",
+    "information":"CPU: Ryzen 55600H\n GPU: RTX 3050 4GB\n RAM: 8Gb\n Ổ cứng: 512Gb \n Kích thước màn hình: 16.1' 144Hz  \n Độ phân giải: 1920 x 1080 pixel (Full HD)",
     "released_year":"2021",
-    "warranty":"24",
-    "price":"20000000"
+    "warranty":"12",
+    "price":"24290000"
 }
 
 ### lấy thông tin 1 sản phẩm
 GET  http://localhost:8000/product/information/1
 
 ### xem tất cả sản phẩm
-GET  http://localhost:8000/product/all
+GET  http://localhost:8000/product/all?num_rows=50
 
 ### tìm kiếm sản phẩm theo tên
 GET  http://localhost:8000/product/all?is_search_name=1&search=macbook

@@ -1,4 +1,4 @@
-### lấy thông tin phàn hổi 
+### Gửi phản hồi cho công ty
 POST  http://localhost:8000/feedback/
 Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo1LCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzEwMDkwMCwiZXhwIjoxNjMzMTM2OTAwfQ.xMO2ksx-Pvm6mbJRJk-iw9eMhjhBSXgA6QRjAOWknVE
 Content-Type: application/json

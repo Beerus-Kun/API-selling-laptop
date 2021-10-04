@@ -1,10 +1,10 @@
 ### Thêm hàng nhập
 POST   http://localhost:8000/import
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50Ijo3LCJwb3NpdGlvbiI6MSwiZW1haWwiOiJzdG9ja2VyMSIsInN0YXR1cyI6MSwiaWF0IjoxNjMzMjU0Nzg2LCJleHAiOjE2MzMyOTA3ODZ9.uDYYNBQjAOUAQsw5-FkYl_cEyWBTziarkVawBI75L84
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxNywicG9zaXRpb24iOjEsImVtYWlsIjoic3RvY2tlcjMiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzM1ODM1MSwiZXhwIjoxNjMzMzk0MzUxfQ.9Z_1x6rFbAtHOFOjo-tEYQlVsvLjGhlJNlRysIkL4pU
 Content-Type: application/json
 
 {
-    "id_product":"3",
+    "id_product":"34",
     "quantity":"30"
 }
 

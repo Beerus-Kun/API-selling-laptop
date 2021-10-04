@@ -522,7 +522,7 @@ router.post('/confirm/:id_account', async(req, res, next)=>{
 
 /**
  * Lấy danh sách tất cả tài khoản
- * @query       page
+ * @query       page, num_rows
  * @permission chỉ quản lý
  * @returns     202
  */
@@ -555,7 +555,7 @@ router.get('/all', Auth.authenAdmin, async (req, res, next) => {
     var data = await Account.selectAmountAll();
 
     return res.json({
-        code: 202,
+        code: 208,
         amount: data
     });
 });
@@ -602,7 +602,7 @@ router.get('/all', Auth.authenAdmin, async (req, res, next) => {
 
 /**
  * Tìm kiếm theo email
- * @query        search, page
+ * @query        search, page, num_rows
  * @permission chỉ quản lý
  * @returns     202, 400
  */
@@ -613,7 +613,7 @@ router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
         let num_rows = Number(req.query.num_rows);
         if(!search){
             return res.json({
-                code: 400
+                code: 423
             })
         }
 
@@ -648,7 +648,7 @@ router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
         let search = req.query.search;
         if(!search){
             return res.json({
-                code: 400
+                code: 423
             })
         }
 
@@ -668,16 +668,11 @@ router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
  * Khóa tài khoản
  * @params      id_account
  * @permisson   Chỉ có admin
- * @returns     200, 400, 403, 404
+ * @returns     200, 403, 404
  */
  router.put('/lock/:id_account', Auth.authenAdmin, async (req, res, next)=>{
     try{
         let id_account_lock = req.params.id_account;
-        if(!id_account_lock){
-            return res.json({
-                code: 400
-            })
-        }
 
         let exist = await Account.hasId(id_account_lock);
         if(!exist){
@@ -708,17 +703,12 @@ router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
  * Mở khóa tài khoản
  * @params      id_account
  * @permisson   Chỉ có admin
- * @returns     200, 400, 404
+ * @returns     200, 404
  * 
  */
  router.put('/unlock/:id_account', Auth.authenAdmin, async (req, res, next)=>{
     try{
         let id_account_lock = req.params.id_account;
-        if(!id_account_lock){
-            return res.json({
-                code: 400
-            })
-        }
 
         let exist = Account.hasId(id_account_lock);
         if(!exist){
