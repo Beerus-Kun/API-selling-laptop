@@ -77,7 +77,7 @@ db.selectAccount = (id_account, page, num_rows)=>{
                     TO_CHAR(date_time :: date, 'dd/mm/yyyy') as date
                     FROM bill 
                     WHERE id_account = $1
-                    ORDER BY date_time
+                    ORDER BY date_time, id_bill
                     LIMIT $3 OFFSET $2`,
         [id_account, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -157,7 +157,7 @@ db.selectAllDay = (date, page, num_rows)=>{
                     FROM bill b, account a
                     WHERE b.id_account = a.id_account
                     AND TO_CHAR(b.date_time :: date, 'yyyy-mm-dd') = $1
-                    ORDER BY b.date_time
+                    ORDER BY b.date_time, b.id_bill
                     LIMIT $3 OFFSET $2`,
         [date, (page-1)*num_rows, num_rows],
         (err, result)=>{

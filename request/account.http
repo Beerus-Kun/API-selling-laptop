@@ -57,7 +57,7 @@ POST http://localhost:8000/account/login
 Content-Type: application/json
 
 {
-    "email": "sieuquaytihon80@gmail.com",
+    "email": "user1",
     "password": "123456"
 }
 
@@ -66,7 +66,7 @@ POST http://localhost:8000/account/login/personel
 Content-Type: application/json
 
 {
-    "email": "stocker3",
+    "email": "user1",
     "password": "123456"
 }
 
@@ -90,7 +90,7 @@ Content-Type: application/json
 
 ### Lấy thông tin tài khoản của mình
 GET http://localhost:8000/account/information
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9hY2NvdW50IjoxLCJwb3NpdGlvbiI6MiwiZW1haWwiOiJhZG1pbjEiLCJzdGF0dXMiOjEsImlhdCI6MTYzMzMxNjc4MiwiZXhwIjoxNjMzMzUyNzgyfQ.8a5Z7yYMa50z82HUY-bv1qw1v9MvxFNngt6wiDRZUbc
+Authorization: Beaer 
 
 ### Danh sách tài khoản
 GET http://localhost:8000/account/all

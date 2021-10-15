@@ -72,7 +72,7 @@ db.selectAll = (page, num_rows)=>{
                     FROM import i, account a, product p
                     WHERE i.id_account = a.id_account
                     AND i.id_product = p.id_product
-                    ORDER BY i.date_time
+                    ORDER BY i.date_time, i.id_import
                     LIMIT $2 OFFSET $1`,
         [(page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -102,6 +102,7 @@ db.selectDay = (date, page, num_rows)=>{
                     WHERE i.id_account = a.id_account
                     AND i.id_product = p.id_product
                     AND TO_CHAR(i.date_time :: date, 'yyyy-mm-dd') = $1
+                    ORDER BY i.date_time, i.id_import
                     LIMIT $3 OFFSET $2`,
         [date, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -134,6 +135,7 @@ db.selectProduct = (id_product, page, num_rows)=>{
                     WHERE i.id_account = a.id_account
                     AND i.id_product = p.id_product
                     AND i.id_product = $1
+                    ORDER BY i.date_time, i.id_import
                     LIMIT $3 OFFSET $2`,
         [id_product, (page-1)*num_rows, num_rows],
         (err, result)=>{

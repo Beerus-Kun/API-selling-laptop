@@ -522,13 +522,13 @@ router.post('/confirm/:id_account', async(req, res, next)=>{
 
 /**
  * Lấy danh sách tất cả tài khoản
- * @query       page, num_rows
+ * @body       page, num_rows
  * @permission chỉ quản lý
  * @returns     202
  */
 router.get('/all', Auth.authenAdmin, async (req, res, next) => {
-    page = Number(req.query.page);
-    num_rows = Number(req.query.num_rows);
+    page = Number(req.body.page);
+    num_rows = Number(req.body.num_rows);
     if(!page){
         page = 1;
     }
@@ -564,12 +564,12 @@ router.get('/all', Auth.authenAdmin, async (req, res, next) => {
  * Lấy danh sách tất cả tài khoản bị khóa
  * 
  * @permission chỉ quản lý
- * @query       page, num_rows
+ * @body       page, num_rows
  * @returns     202
  */
  router.get('/lock', Auth.authenAdmin, async (req, res, next) => {
-    page = Number(req.query.page);
-    num_rows = Number(req.query.num_rows);
+    page = Number(req.body.page);
+    num_rows = Number(req.body.num_rows);
     if(!page){
         page = 1;
     }
@@ -602,15 +602,15 @@ router.get('/all', Auth.authenAdmin, async (req, res, next) => {
 
 /**
  * Tìm kiếm theo email
- * @query        search, page, num_rows
+ * @body        search, page, num_rows
  * @permission chỉ quản lý
  * @returns     202, 400
  */
 router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let search = req.query.search;
-        let page = Number(req.query.page);
-        let num_rows = Number(req.query.num_rows);
+        let search = req.body.search;
+        let page = Number(req.body.page);
+        let num_rows = Number(req.body.num_rows);
         if(!search){
             return res.json({
                 code: 423
@@ -639,13 +639,13 @@ router.get("/search", Auth.authenAdmin, async(req, res, next)=>{
 
 /**
  * Số lượng kết quả tìm theo email
- * @query        search
+ * @body        search
  * @permission chỉ quản lý
  * @returns     208, 400
  */
  router.get("/search/amount", Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let search = req.query.search;
+        let search = req.body.search;
         if(!search){
             return res.json({
                 code: 423

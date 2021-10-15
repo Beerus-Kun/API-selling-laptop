@@ -36,7 +36,7 @@ router.get('/information/:id_product', async(req, res, next)=>{
 
 /**
  * Lấy tất cả sản phẩm theo page
- * @query       page, num_rows,
+ * @body       page, num_rows,
  *              is_sorted_price, sorted_price (0-giam, 1-tang),
  *              lowest_price, highest_price
  *              is_brand, id_brand,
@@ -45,22 +45,23 @@ router.get('/information/:id_product', async(req, res, next)=>{
  */
 router.get('/all', async(req, res, next)=>{
     try{
-        let page = Number(req.query.page);
-        let num_rows = Number(req.query.num_rows);
-        let is_sorted_price = req.query.is_sorted_price;
-        let sorted_price = req.query.sorted_price;
-        let lowest_price = req.query.lowest_price;
-        let highest_price = req.query.highest_price;
-        let is_brand = req.query.is_brand;
-        let id_brand = req.query.id_brand;
-        let is_search_name = req.query.is_search_name;
-        let search = req.query.search;
+        let page = Number(req.body.page);
+        let num_rows = Number(req.body.num_rows);
+        let is_sorted_price = req.body.is_sorted_price;
+        let sorted_price = req.body.sorted_price;
+        let lowest_price = req.body.lowest_price;
+        let highest_price = req.body.highest_price;
+        let is_brand = req.body.is_brand;
+        let id_brand = req.body.id_brand;
+        let is_search_name = req.body.is_search_name;
+        let search = req.body.search;
 
         let data;
 
         if(!num_rows){
             num_rows = 10;
         }
+        
         if(!(page)){
             page = 1;
         }
@@ -120,7 +121,7 @@ router.get('/all', async(req, res, next)=>{
 
 /**
  * Lấy số lượng sản phẩm hiện có
- * @query       is_sorted_price,
+ * @body       is_sorted_price,
  *              lowest_price, highest_price
  *              is_brand, id_brand,
  *              is_search_name, search,
@@ -129,13 +130,13 @@ router.get('/all', async(req, res, next)=>{
 router.get('/all/amount', async(req, res, next)=>{
     try{
         let amount;
-        let is_sorted_price = req.query.is_sorted_price;
-        let lowest_price = req.query.lowest_price;
-        let highest_price = req.query.highest_price;
-        let is_brand = req.query.is_brand;
-        let id_brand = req.query.id_brand;
-        let is_search_name = req.query.is_search_name;
-        let search = req.query.search;
+        let is_sorted_price = req.body.is_sorted_price;
+        let lowest_price = req.body.lowest_price;
+        let highest_price = req.body.highest_price;
+        let is_brand = req.body.is_brand;
+        let id_brand = req.body.id_brand;
+        let is_search_name = req.body.is_search_name;
+        let search = req.body.search;
 
         if(is_brand == 1){
             if(!id_brand){

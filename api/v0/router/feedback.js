@@ -37,14 +37,14 @@ router.get('/information/:id_feedback', Auth.authenAdmin, async(req, res, next)=
 /**
  * Lấy tất cả feedback
  * @permission  admin
- * @query        is_unread, page, num_rows
+ * @body        is_unread, page, num_rows
  * @returns     202
  */
 router.get('/all', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let is_unread = req.query.is_read;
-        let page = req.query.page;
-        let num_rows = req.query.num_rows;
+        let is_unread = req.body.is_read;
+        let page = req.body.page;
+        let num_rows = req.body.num_rows;
         let data = [];
 
         if(!is_unread){
@@ -78,12 +78,12 @@ router.get('/all', Auth.authenAdmin, async(req, res, next)=>{
 /**
  * Lấy số lượng feedback
  * @permission  admin
- * @query       is_unread
+ * @body       is_unread
  * @returns     208
  */
 router.get('/all/amount', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let is_unread = req.query.is_unread;
+        let is_unread = req.body.is_unread;
         let amount;
         if(!is_unread){
             is_unread = 0;

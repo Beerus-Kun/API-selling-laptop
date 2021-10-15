@@ -164,7 +164,7 @@ db.selectSearch = (search, page, num_rows)=>{
         pool.query(`WITH search AS (
                         SELECT id_account, email, name, phone, address, sex, status, POSITION(LOWER($1) IN email) AS index
                         FROM account 
-                        ORDER BY ind
+                        ORDER BY index, id_account
                     )
 
                     SELECT * FROM search WHERE index>0 

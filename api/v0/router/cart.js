@@ -28,13 +28,13 @@ router.get('/account', Auth.authenUser,async(req, res, next)=>{
 /**
  * Thay đổi số lượng của sản phẩm trong giỏ hàng
  * @params        id_cart
- * @query         new_quantity
+ * @body         new_quantity
  * @returns         200, 415, 416, 423
  */
 router.put('/update/:id_cart/quantity', Auth.authenUser, async(req, res, next)=>{
     try{
         let id_cart = req.params.id_cart;
-        let new_quantity = Number(req.query.new_quantity);
+        let new_quantity = Number(req.body.new_quantity);
         let id_account = Auth.tokenData(req).id_account;
 
         if(new_quantity){
@@ -78,13 +78,13 @@ router.put('/update/:id_cart/quantity', Auth.authenUser, async(req, res, next)=>
 /**
  * Thêm sản phẩm vô giỏ hàng
  * @params      id_product
- * @query       quantity
+ * @body       quantity
  * @returns     200, 201, 415
  */
 router.post('/product/:id_product', Auth.authenUser, async(req, res, next)=>{
     try{
         let id_product = req.params.id_product;
-        let quantity = Number(req.query.quantity);
+        let quantity = Number(req.body.quantity);
         let id_account = Auth.tokenData(req).id_account;
 
         if(quantity<1){

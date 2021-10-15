@@ -117,7 +117,7 @@ db.selectAll = (page, num_rows)=>{
                     p.price, p.current_price
                     FROM product p, brand b
                     WHERE p.id_brand = b.id_brand
-                    ORDER BY p.status DESC, p.released_year
+                    ORDER BY p.status DESC, p.released_year, p.id_product
                     LIMIT $2 OFFSET $1`,
         [(page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -143,9 +143,9 @@ db.selectPriceASC = (lowest_price, highest_price, page, num_rows)=>{
                     p.id_image, p.name, p.status,
                     p.price, p.current_price
                     FROM product p, brand b
-                    WHERE status > 0 AND current_price > $1 
-                    AND current_price <$2 AND b.id_brand = p.id_brand
-                    ORDER BY current_price, status DESC
+                    WHERE p.status > 0 AND p.current_price > $1 
+                    AND p.current_price <$2 AND b.id_brand = p.id_brand
+                    ORDER BY p.current_price, p.status DESC, p.id_product
                     LIMIT $4 OFFSET $3`,
         [lowest_price, highest_price, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -161,9 +161,9 @@ db.selectPriceDESC = (lowest_price, highest_price, page, num_rows)=>{
                     p.id_image, p.name, p.status,
                     p.price, p.current_price
                     FROM product p, brand b
-                    WHERE status > 0 AND current_price > $1 
-                    AND current_price <$2 AND p.id_brand = b.id_brand
-                    ORDER BY current_price DESC, status DESC
+                    WHERE p.status > 0 AND p.current_price > $1 
+                    AND p.current_price <$2 AND p.id_brand = b.id_brand
+                    ORDER BY p.current_price DESC, p.status DESC, p.id_product
                     LIMIT $4 OFFSET $3`,
         [lowest_price, highest_price, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -179,9 +179,9 @@ db.selectPrice = (lowest_price, highest_price, page, num_rows)=>{
                     p.id_image, p.name, p.status,
                     p.price, p.current_price
                     FROM product p, brand b
-                    WHERE status > 0 AND current_price > $1 
-                    AND current_price <$2 AND p.id_brand = b.id_brand
-                    ORDER BY status DESC
+                    WHERE p.status > 0 AND p.current_price > $1 
+                    AND p.current_price <$2 AND p.id_brand = b.id_brand
+                    ORDER BY p.status DESC, p.id_product
                     LIMIT $4 OFFSET $3`,
         [lowest_price, highest_price, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -211,7 +211,7 @@ db.selectBrand = (id_brand, page, num_rows)=>{
                     FROM product p, brand b
                     WHERE p.status > 0 AND p.id_brand = $1
                     AND p.id_brand = b.id_brand
-                    ORDER BY p.status DESC, p.price
+                    ORDER BY p.status DESC, p.price, p.id_product
                     LIMIT $3 OFFSET $2`,
         [id_brand, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -229,7 +229,7 @@ db.selectBrandASC = (id_brand, page, num_rows)=>{
                     FROM product p, brand b
                     WHERE p.status > 0 AND p.id_brand = $1
                     AND p.id_brand = b.id_brand
-                    ORDER BY p.price, p.status DESC
+                    ORDER BY p.price, p.status DESC, p.id_product
                     LIMIT $3 OFFSET $2`,
         [id_brand, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -247,7 +247,7 @@ db.selectBrandDESC = (id_brand, page, num_rows)=>{
                     FROM product p, brand b
                     WHERE p.status > 0 AND p.id_brand = $1
                     AND p.id_brand = b.id_brand
-                    ORDER BY p.price DESC, p.status DESC
+                    ORDER BY p.price DESC, p.status DESC, p.id_product
                     LIMIT $3 OFFSET $2`,
         [id_brand, (page-1)*num_rows, num_rows],
         (err, result)=>{
@@ -276,7 +276,7 @@ db.selectSearch = (search, page, num_rows)=>{
                     p.price, p.current_price 
                     FROM product p, brand b 
                     WHERE POSITION(LOWER($1) IN LOWER(p.name))>0 AND b.id_brand = p.id_brand
-                    ORDER BY status DESC
+                    ORDER BY p.status DESC, p.id_product
                     LIMIT $3 OFFSET $2`,
         [search, (page-1)*num_rows, num_rows],
         (err, result)=>{
