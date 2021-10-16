@@ -17,7 +17,12 @@ Content-Type: application/json
 GET  http://localhost:8000/product/information/1
 
 ### xem tất cả sản phẩm
-GET  http://localhost:8000/product/all?num_rows=50
+GET  http://localhost:8000/product/all
+Content-Type: application/json
+
+{
+    "page":"4"
+}
 
 ### tìm kiếm sản phẩm theo tên
 GET  http://localhost:8000/product/all?is_search_name=1&search=macbook

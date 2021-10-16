@@ -11,21 +11,21 @@ const Datetime = require('../module/date');
 /**
  * Xem danh sách tất cả nhập hàng
  * @permision   người làm việc
- * @body   page, num_rows, 
+ * @query   page, num_rows, 
  *          is_date, day, month, year,
  *          is_product, id_product
  * @returns 202, 423
  */
 router.get('/all', Auth.authenPersonel, async(req, res, next)=>{
     try{
-        let page = Number(req.body.page);
-        let num_rows = Number(req.body.num_rows);
-        let is_date = req.body.is_date;
-        let day = req.body.day;
-        let month = req.body.month;
-        let year = req.body.year;
-        let is_product = req.body.is_product;
-        let id_product = req.body.id_product;
+        let page = Number(req.query.page);
+        let num_rows = Number(req.query.num_rows);
+        let is_date = req.query.is_date;
+        let day = req.query.day;
+        let month = req.query.month;
+        let year = req.query.year;
+        let is_product = req.query.is_product;
+        let id_product = req.query.id_product;
 
         let data;
 
@@ -85,18 +85,18 @@ router.get('/all', Auth.authenPersonel, async(req, res, next)=>{
 /**
  * Xem số lượng hàng nhập
  * @permission  người làm việc
- * @body       is_date, day, month, year,
+ * @query       is_date, day, month, year,
  *              is_product, id_product
  * @returns     208, 423
  */
 router.get('/all/amount', Auth.authenPersonel, async(req, res, next)=>{
     try{
-        let is_date = req.body.is_date;
-        let day = req.body.day;
-        let month = req.body.month;
-        let year = req.body.year;
-        let is_product = req.body.is_product;
-        let id_product = req.body.id_product;
+        let is_date = req.query.is_date;
+        let day = req.query.day;
+        let month = req.query.month;
+        let year = req.query.year;
+        let is_product = req.query.is_product;
+        let id_product = req.query.id_product;
 
         let amount;
         if(is_date == 1){

@@ -5,14 +5,15 @@ const router = express.Router();
 
 /**
  * Lấy tất cả hãng theo page
- * @body       search
+ * @query       search
  * @returns     202
  */
 router.get('/all', async(req, res, next)=>{
     try{
-        let search = req.body.search;
+        let search = req.query.search;
         let data = [];
         if(search){
+            search = decodeURIComponent(search);
             data = await Brand.selectSearch(search);
         }else{
             data = await Brand.selectAll();

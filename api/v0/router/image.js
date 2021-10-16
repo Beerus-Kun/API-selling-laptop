@@ -114,13 +114,13 @@ router.post('/', Auth.authenAdmin, upload.single('image'), async (req, res, next
 /**
  * Lấy tất cả hình
  * @permisson   Quản lý
- * @body       page, num_rows
+ * @query       page, num_rows
  * @returns     202, 407
  */
 router.get('/all', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let page = Number(req.body.page);
-        let num_rows = Number(req.body.num_rows);
+        let page = Number(req.query.page);
+        let num_rows = Number(req.query.num_rows);
 
         if(!num_rows){
             num_rows = 10;

@@ -12,13 +12,13 @@ const Datetime = require('../module/date');
 /**
  * Xem danh sách hóa đơn
  * @permission  co tai khoan
- * @body    page, num_rows
+ * @query    page, num_rows
  * @return  202
  */
 router.get('/account', Auth.authenUser, async(req, res, next)=>{
     try{
-        let page = Number(req.body.page);
-        let num_rows = Number(req.body.num_rows);
+        let page = Number(req.query.page);
+        let num_rows = Number(req.query.num_rows);
         let id_account = Auth.tokenData(req).id_account;
         if(!page){
             page = 1;
@@ -97,16 +97,16 @@ router.get('/information/:id_bill', Auth.authenUser, async(req, res, next)=>{
 /**
  * Xuất hóa đơn trong ngày
  * @permission  admin
- * @body    page, day, month, year, num_rows
+ * @query    page, day, month, year, num_rows
  * @returns     202
  */
 router.get('/day', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let page = Number(req.body.page);
-        let num_rows = Number(req.body.num_rows);
-        let day = Number(req.body.day);
-        let month = Number(req.body.month);
-        let year = req.body.year;
+        let page = Number(req.query.page);
+        let num_rows = Number(req.query.num_rows);
+        let day = Number(req.query.day);
+        let month = Number(req.query.month);
+        let year = req.query.year;
 
         if(!page){
             page = 1;
@@ -152,14 +152,14 @@ router.get('/day', Auth.authenAdmin, async(req, res, next)=>{
 /**
  * Số lượng hóa đơn trong ngày
  * @permission  admin
- * @body     day, month, year
+ * @query     day, month, year
  * @returns     208
  */
 router.get('/day/amount', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let day = Number(req.body.day);
-        let month = Number(req.body.month);
-        let year = req.body.year;
+        let day = Number(req.query.day);
+        let month = Number(req.query.month);
+        let year = req.query.year;
 
         if(!day){
             day = await Datetime.selectCurrentDay();
@@ -197,14 +197,14 @@ router.get('/day/amount', Auth.authenAdmin, async(req, res, next)=>{
 /**
  * Doanh thu trong ngày
  * @permission  admin
- * @body     day, month, year
+ * @query     day, month, year
  * @returns     211
  */
 router.get('/day/total', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let day = Number(req.body.day);
-        let month = Number(req.body.month);
-        let year = req.body.year;
+        let day = Number(req.query.day);
+        let month = Number(req.query.month);
+        let year = req.query.year;
 
         if(!day){
             day = await Datetime.selectCurrentDay();
@@ -242,13 +242,13 @@ router.get('/day/total', Auth.authenAdmin, async(req, res, next)=>{
 /**
  * Doanh thu trong tháng
  * @permission  admin
- * @body     month, year
+ * @query     month, year
  * @returns     202
  */
 router.get('/month', Auth.authenAdmin, async(req, res, next)=>{
     try{
-        let month = Number(req.body.month);
-        let year = Number(req.body.year);
+        let month = Number(req.query.month);
+        let year = Number(req.query.year);
         let data = [];
 
         if(!month){

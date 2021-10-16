@@ -6,8 +6,7 @@ const Cart = require('../module/cart');
 
 /**
  * Xem danh sách giỏ hàng
- * @permisstion có tài khoản
- * @body   
+ * @permisstion có tài khoản 
  * @returns     202
  */
 router.get('/account', Auth.authenUser,async(req, res, next)=>{
