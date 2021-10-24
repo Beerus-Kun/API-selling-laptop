@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-mailer.sendVerification = (userEmail, verification)=>{
+mailer.sendVerification = (userEmail, verification) =>{
   var mailOptions = {
       from: 'samab1541@gmail.com',
       to: userEmail,
