@@ -290,7 +290,7 @@ router.get('/month', Auth.authenAdmin, async(req, res, next)=>{
 /**
  * Kiểm tra đơn hàng trước khi mua
  * @permission  ng co tai khoan
- * @returns     207, 419, 417, 418
+ * @returns     207, 419, 417, 418, 420
  */
 router.get('/checked', Auth.authenUser, async(req, res, next)=>{
     try{
