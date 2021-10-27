@@ -122,9 +122,9 @@ db.selectStatusID = (id_bill)=>{
 
 db.selectItems = (id_bill)=>{
     return new Promise((resolve, reject)=>{
-        pool.query(`SELECT p.name, b.quantity, b.price, b.id_product, b.warranty, p.id_image, b.name AS brand_name
-                    FROM bill_item b, product p, brand b
-                    WHERE b.id_product = p.id_product AND p.id_brand = b.id_brand AND
+        pool.query(`SELECT p.name, b.quantity, b.price, b.id_product, b.warranty, p.id_image, br.name AS brand_name
+                    FROM bill_item b, product p, brand br
+                    WHERE b.id_product = p.id_product AND p.id_brand = br.id_brand AND
                     b.id_bill = $1`,
         [id_bill],
         (err, result)=>{
