@@ -77,7 +77,7 @@ db.selectAccount = (id_account, page, num_rows)=>{
                     TO_CHAR(date_time :: date, 'dd/mm/yyyy') as date
                     FROM bill 
                     WHERE id_account = $1
-                    ORDER BY date_time, id_bill
+                    ORDER BY date_time DESC, id_bill
                     LIMIT $3 OFFSET $2`,
         [id_account, (page-1)*num_rows, num_rows],
         (err, result)=>{
