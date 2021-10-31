@@ -516,6 +516,10 @@ router.post('/confirm/:id_account', async(req, res, next)=>{
                 code: 203,
                 accessToken: accessToken
             });
+        }else{
+            return res.json({
+                code: 426
+            });
         }
 
     }catch(err){
