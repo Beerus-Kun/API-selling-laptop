@@ -462,6 +462,10 @@ router.post('/forgot-password', async(req, res, next)=>{
                     })
                 }
             })
+        }else{
+            res.json({
+                code: 404
+            })
         }
     }catch(err){
         console.log(err);
